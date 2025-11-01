@@ -1,0 +1,16 @@
+vim.wo.number = true
+vim.o.relativenumber = true
+vim.o.clipboard = 'unnamedplus'
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.expandtab = true
+vim.o.scrolloff = 4
+vim.o.numberwidth = 4
+vim.o.swapfile = false
+vim.o.smartindent = true
+vim.o.breakindent = true
+vim.o.updatetime = 200
+vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 3
+vim.o.winborder = "rounded"
