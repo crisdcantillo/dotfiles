@@ -36,3 +36,6 @@ fc-cache -fv
 
 # bashrc
 ln -sf $DOTSFOLDER/.bash_profile /home/$USER/.bash_profile
+
+# gitconfig
+ln -sf $DOTSFOLDER/.gitconfig /home/$USER/.gitconfig
