@@ -1,3 +1,4 @@
 .cache
 alias
 versions
+nvim/lazy-lock.json
