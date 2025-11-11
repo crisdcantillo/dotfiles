@@ -1,0 +1,9 @@
+Host personal
+	HostName github.com
+	IdentityFile ~/.ssh/personal
+	User Git
+
+Host 3dbrains
+	HostName github.com
+	IdentityFile ~/.ssh/3dbrains
+	User Git

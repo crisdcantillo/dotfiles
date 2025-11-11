@@ -13,6 +13,9 @@ ln -sf $DOTSFOLDER/default.conf /etc/keyd/default.conf
 sudo systemctl enable keyd
 sudo systemctl start keyd
 
+# ssh
+ln -sf $DOTSFOLDER/config /home/$USER/.ssh/config
+
 # nvim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
 sudo rm -rf /opt/nvim-linux-x86_64
