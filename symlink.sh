@@ -7,8 +7,9 @@ sudo apt update && sudo apt upgrade
 sudo apt install build-essential git tig curl wget unzip zip tar htop vim ripgrep fzf bat xclip ripgrep
 
 # keyd
-sudo apt install keyd
-mkdir -p /etc/keyd
+git clone https://github.com/rvaiya/keyd.git
+cd keyd
+make && make install
 ln -sf $DOTSFOLDER/default.conf /etc/keyd/default.conf
 sudo systemctl enable keyd
 sudo systemctl start keyd
