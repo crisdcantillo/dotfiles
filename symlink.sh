@@ -4,7 +4,7 @@ DOTSFOLDER=/home/$USER/dotfiles
 sudo apt update && sudo apt upgrade
 
 # essential installs
-sudo apt install build-essential git tig meld curl wget unzip zip tar htop vim ripgrep fzf bat xclip ripgrep
+sudo apt install build-essential git tig curl wget unzip zip tar htop vim ripgrep fzf bat xclip ripgrep
 
 # keyd
 sudo apt install keyd
