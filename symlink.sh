@@ -5,6 +5,7 @@ DOTSFOLDER=/home/$USER/dotfiles
 sudo apt install build-essential git tig curl wget unzip zip tar htop vim ripgrep fzf bat xclip ripgrep
 
 # keyd
+sudo rm /etc/keyd/default.conf
 git clone https://github.com/rvaiya/keyd.git
 cd keyd
 make && make install
@@ -15,6 +16,7 @@ sudo rm -rf $DOTSFOLDER/keyd
 
 # nvim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+sudo rm -rf /home/$USER/.config/nvim
 sudo rm -rf /opt/nvim-linux-x86_64
 sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
 rm nvim-linux-x86_64.tar.gz
@@ -31,8 +33,10 @@ ln -sf $DOTSFOLDER/fonts /home/$USER/.local/share/fonts
 fc-cache -fv
 
 # gitconfig
+sudo rm /home/$USER/.gitconfig
 ln -sf $DOTSFOLDER/.gitconfig /home/$USER/.gitconfig
 
+sudo echo '\n' >> /home/$USER/.bashrc
 sudo echo 'export PATH=$PATH:/opt/nvim-linux-x86_64/bin' >> /home/$USER/.bashrc
 sudo echo 'export EDITOR=nvim' >> /home/$USER/.bashrc
 sudo echo 'export VISUAL=nvim' >> /home/$USER/.bashrc
