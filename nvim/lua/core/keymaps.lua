@@ -1,6 +1,21 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Better Colemak-DH movement
+vim.keymap.set('n', 'n', 'j', { noremap = true })
+vim.keymap.set('n', 'e', 'k', { noremap = true })
+vim.keymap.set('n', 'i', 'l', { noremap = true })
+
+-- You probably want this too, so visual mode doesn't betray you
+vim.keymap.set('v', 'n', 'j', { noremap = true })
+vim.keymap.set('v', 'e', 'k', { noremap = true })
+vim.keymap.set('v', 'i', 'l', { noremap = true })
+
+-- Operator-pending mode (motions after d, c, y, etc.)
+vim.keymap.set('o', 'n', 'j', { noremap = true })
+vim.keymap.set('o', 'e', 'k', { noremap = true })
+vim.keymap.set('o', 'i', 'l', { noremap = true })
+
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
 vim.keymap.set('n', '<leader><Esc>', ':nohlsearch <CR>', { desc = 'Unhighlight' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics' })
