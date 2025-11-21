@@ -36,7 +36,6 @@ fc-cache -fv
 sudo rm /home/$USER/.gitconfig
 ln -sf $DOTSFOLDER/.gitconfig /home/$USER/.gitconfig
 
-sudo echo '\n' >> /home/$USER/.bashrc
 sudo echo 'export PATH=$PATH:/opt/nvim-linux-x86_64/bin' >> /home/$USER/.bashrc
 sudo echo 'export EDITOR=nvim' >> /home/$USER/.bashrc
 sudo echo 'export VISUAL=nvim' >> /home/$USER/.bashrc
