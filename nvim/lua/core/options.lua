@@ -14,6 +14,7 @@ vim.o.updatetime = 200
 vim.g.netrw_banner = 0
 vim.g.netrw_liststyle = 3
 vim.o.winborder = "rounded"
+vim.opt.fixendofline = false
 vim.opt.list = true
 vim.opt.listchars = {
     tab = "→ ",

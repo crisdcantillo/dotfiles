@@ -3,3 +3,5 @@
 [user]
 	email = crisdcantillo@gmail.com
 	name = Cristhian Cantillo
+[core]
+	autocrlf = input
