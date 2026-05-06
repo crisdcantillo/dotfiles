@@ -2,7 +2,7 @@ USER=crisdcantillo
 DOTSFOLDER=/home/$USER/dotfiles
 
 # essential installs
-sudo apt install build-essential git tig curl wget unzip zip tar htop vim ripgrep fzf bat xclip ripgrep
+sudo apt install build-essential git curl wget unzip zip tar htop vim ripgrep fzf bat xclip
 
 # keyd
 sudo rm /etc/keyd/default.conf
@@ -13,11 +13,6 @@ ln -sf $DOTSFOLDER/default.conf /etc/keyd/default.conf
 sudo systemctl enable keyd
 sudo systemctl start keyd
 sudo rm -rf $DOTSFOLDER/keyd
-
-# nodejs
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-\. "$HOME/.nvm/nvm.sh"
-nvm install --lts
 
 # fonts
 mkdir -p /home/$USER/.local/share/fonts
