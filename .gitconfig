@@ -1,5 +1,7 @@
 [alias]
 	adog = log --all --decorate --oneline --graph
+	fetch = fetch --prune
+	amend = commit --amend --no-edit
 [user]
 	email = crisdcantillo@gmail.com
 	name = Cristhian Cantillo
