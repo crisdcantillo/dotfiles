@@ -1,0 +1,88 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 28,
+    "spacing": 8,
+
+    // LEFT
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+
+    "hyprland/workspaces": {
+        "persistent-workspaces": {
+            "*": 3
+        }
+    },
+
+    // CENTER
+    "modules-center": [
+        "clock"
+    ],
+
+    "clock": {
+        "format": "{:%H:%M - %d %b}",
+        "tooltip": false
+    },
+
+    // RIGHT
+    "modules-right": [
+        "network",
+        "bluetooth",
+        "pulseaudio",
+        "backlight",
+        "battery"
+    ],
+
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": "󰖁",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        }
+    },
+
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["◐"]
+    },
+
+    "bluetooth": {
+        "format": " {status}",
+        "format-connected": " {device_battery_percentage}%",
+        "tooltip-format": " {status}",
+        "tooltip-format-connected": "{device_alias} - {device_battery_percentage}%"
+    },
+
+    "network": {
+        "format-wifi": "{icon} {signalStrength}%",
+        "tooltip-format-wifi": "{essid} - {signalStrength}%",
+        "format-ethernet": "󰈀 {ipaddr}",
+        "format-disconnected": "󰖪",
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ]
+    },
+
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": [
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ],
+        "format-charging": "{capacity}% 󰂄"
+    }
+}
+
