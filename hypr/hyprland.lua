@@ -111,12 +111,11 @@ hl.config({
 
 hl.config({
     input = {
-        kb_layout  = "us, us",
-        kb_variant = "colemak_dh, ",
+        kb_layout  = "us",
+        kb_variant = "colemak_dh",
         kb_model   = "",
-        kb_options = "grp:win_space_toggle",
         kb_rules   = "",
-	resolve_binds_by_sym = 1,
+        resolve_binds_by_sym = 1,
 
         follow_mouse = 1,
 
@@ -126,6 +125,13 @@ hl.config({
             natural_scroll = true,
         },
     },
+
+})
+
+hl.device({
+    name = "sweep-keyboard",
+    kb_layout  = "us",
+    kb_variant = ""
 })
 
 hl.gesture({
