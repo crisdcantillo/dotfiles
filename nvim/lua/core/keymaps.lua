@@ -4,7 +4,7 @@ vim.g.maplocalleader = ' '
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
 vim.keymap.set('n', '<leader><Esc>', ':nohlsearch <CR>', { desc = 'Unhighlight' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics' })
-vim.keymap.set('n', '<C-s>', ':w <CR>')
+vim.keymap.set('n', '<C-s>', ':w <CR>', { desc = 'Save file' })
 vim.keymap.set('n', '<leader>e', ':Neotree toggle <CR>', { desc = 'Open neotree' })
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll down' })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll up' })
@@ -14,10 +14,6 @@ vim.keymap.set('n', '<Tab>', ':bnext <CR>', { desc = 'Next buffer' })
 vim.keymap.set('n', '<S-Tab>', ':bprevious <CR>', { desc = 'Previous buffer' })
 vim.keymap.set('n', '<leader>x', ':bdelete! <CR>', { desc = 'Delete buffer' })
 vim.keymap.set('n', '<leader>X', ':%bd|e#|bd# <CR>', { desc = 'Delete all buffer but active' })
-vim.keymap.set('n', '<C-k>', ':wincmd k <CR>', { desc = 'Move to split up' })
-vim.keymap.set('n', '<C-j>', ':wincmd j <CR>', { desc = 'Move to split down' })
-vim.keymap.set('n', '<C-h>', ':wincmd h <CR>', { desc = 'Move to split left' })
-vim.keymap.set('n', '<C-l>', ':wincmd l <CR>', { desc = 'Move to split right' })
 vim.keymap.set('n', '<leader>w', '<cmd>set wrap! <CR>', { desc = 'Toggle line wrap' })
 
 -- Telescope
@@ -36,11 +32,14 @@ vim.keymap.set('n', '<leader>d', ':Telescope lsp_definitions <CR>', { desc = 'Go
 -- Git
 vim.keymap.set('n', 'ga', ':term git adog <CR>', { desc = 'Git adog' })
 vim.keymap.set('n', 'gs', ':term git status <CR>', { desc = 'Git status' })
-vim.keymap.set('n', 'gd', ':Gvdiffsplit <CR>', { desc = 'Git diff' })
+vim.keymap.set('n', 'gd', ':term git diff <CR>', { desc = 'Git diff' })
+vim.keymap.set('n', 'g.', ':term git add --all <CR>', { desc = 'Git add all' })
+vim.keymap.set('n', 'g+', ':term git amend <CR>', { desc = 'Git amend' })
+vim.keymap.set('n', 'gc', ':term git commit <CR>', { desc = 'Git commit' })
 
 -- Stay in indent mode
-vim.keymap.set('v', '<', '<gv')
-vim.keymap.set('v', '>', '>gv')
+vim.keymap.set('v', '<', '<gv', { desc = 'Indent left' })
+vim.keymap.set('v', '>', '>gv', { desc = 'Indent right' })
 
 -- Keep last yanked when pasting
-vim.keymap.set('v', 'p', '"_dP')
+vim.keymap.set('v', 'p', '"_dP', { desc = 'Paste' })

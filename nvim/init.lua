@@ -23,7 +23,6 @@ require("lazy").setup({
     require("plugins.treesitter"),
     require("plugins.telescope"),
     require("plugins.neotree"),
-    require("plugins.fugitive"),
     require("plugins.gitsigns"),
     require("plugins.theme")
 })
