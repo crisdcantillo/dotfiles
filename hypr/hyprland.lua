@@ -7,8 +7,9 @@ hl.monitor({
 
 
 local terminal    = "kitty"
-local fileManager = "dolphin"
-local menu        = "hyprlauncher"
+local fileManager = "thunar"
+local browser     = "firefox"
+local launcher    = "hyprlauncher"
 
 
 hl.on("hyprland.start", function () 
@@ -156,7 +157,8 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 local closeWindowBind = hl.bind(mainMod .. " + X", hl.dsp.window.close())
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("firefox"))
+hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(browser))
+hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(launcher))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))

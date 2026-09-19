@@ -1,7 +1,7 @@
 USER=crisdcantillo
 DOTSFOLDER=/home/$USER/dotfiles
 
-sudo pacman -S tlp grim slurp wl-clipboard terminus-font git waybar hyprpaper distrobox bash-completion starship tmux neovim luarocks tree-sitter-cli less nodejs npm
+sudo pacman -S tlp grim slurp wl-clipboard hyprlauncher terminus-font git waybar hyprpaper distrobox bash-completion starship tmux neovim luarocks tree-sitter-cli less nodejs npm thunar
 
 sudo yay ddev-bin
 
