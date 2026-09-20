@@ -7,7 +7,6 @@ hl.monitor({
 
 
 local terminal    = "kitty"
-local fileManager = "thunar"
 local browser     = "firefox"
 local launcher    = "hyprlauncher"
 
@@ -156,7 +155,6 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 local closeWindowBind = hl.bind(mainMod .. " + X", hl.dsp.window.close())
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(launcher))
 
