@@ -1,7 +1,33 @@
 USER=crisdcantillo
 DOTSFOLDER=/home/$USER/dotfiles
 
-sudo pacman -S tlp grim slurp wl-clipboard hyprlauncher terminus-font git waybar hyprpaper distrobox bash-completion starship tmux neovim luarocks tree-sitter-cli less nodejs npm
+sudo pacman -S \
+    # GENERAL
+    tlp \               # Battery Manager
+    grim \              # Screenshots
+    slurp \             # Screenshot Section
+    less \              # Navigate Long Terminal Texts
+    # WAYLAND
+    waybar \            # Status Bar
+    hyprlauncher \      # App Launcher
+    hyprpaper \         # Wallpapers
+    wl-clipboard \      # Clipboard
+    terminus-font \     # Terminal Font
+    # DEVELOPMENT
+    git \               # Version Control
+    distrobox \         # Run Distros
+    bash-completion \   # Autocomplete on Terminal
+    starship \          # Customizable Terminal Prompt
+    tmux \              # Terminal Multiplexer
+    nodejs \            # Javascript Runtime
+    npm \               # Package Manager for Javascript
+    base-devel \        # Tools for C
+    gdb \               # Debugger for C
+    # CODE EDITOR
+    neovim \            # Editor
+    luarocks \          # Package manager for Lua
+    tree-sitter-cli \   # CLI for Treesitter
+    ripgrep             # Recursive Search
 
 sudo yay ddev-bin
 
