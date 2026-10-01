@@ -1,0 +1,49 @@
+exec pipewire
+exec wirepumbler
+
+set $mod Mod4
+
+set $term foot
+set $menu wofi --show drun
+
+## WORKSPACES
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+bindsym $mod+Up focus up
+bindsym $mod+Down focus down
+
+bindsym $mod+Return exec $term
+bindsym $mod+Space exec $menu
+bindsym $mod+q kill
+
+bar {
+    position top
+
+    status_command ~/.config/sway/status.sh
+
+    colors {
+        statusline #ffffff
+        background #323232
+        inactive_workspace #32323200 #32323200 #5c5c5c
+    }
+}
+
+input type:keyboard {
+    xkb_layout us
+    xkb_variant colemak_dh
+}
