@@ -10,7 +10,7 @@ elogind
 mesa-dri
 mesa-vulkan-intel
 sway
-wofi
+bemenu
 wl-clipboard
 foot
 starship

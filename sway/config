@@ -9,7 +9,16 @@ exec_always swaybg -i ~/.config/sway/wallpaper.jpg -m fill
 set $mod Mod4
 
 set $term foot
-set $menu wofi --show drun
+set $menu bemenu-run    \
+    --line-height 24    \
+    --hp 12             \
+    --fb '#323232'      \
+    --nb '#323232'      \
+    --tf '#ffffff'      \
+    --tb '#323232'      \
+    --hf '#ffffff'      \
+    --hb '#323232'
+
 
 # SHORTCUTS
 bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+
@@ -48,6 +57,7 @@ default_border pixel 0
 
 bar {
     position top
+    height 24
 
     status_command ~/.config/sway/status.sh
 
