@@ -10,10 +10,12 @@ mesa-dri
 mesa-vulkan-intel
 sway
 wofi
+wl-clipboard
 foot
 htop
 vim
 neovim
+nodejs
 tree-sitter-cli
 luarocks
 ripgrep

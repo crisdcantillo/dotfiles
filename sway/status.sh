@@ -3,7 +3,7 @@
 while true; do
 
     # Wi-Fi
-    WIFI="Disconnected"
+    WIFI="󰤮"
 
     for iface in /sys/class/net/*; do
         iface=$(basename "$iface")
@@ -11,31 +11,30 @@ while true; do
         [ "$iface" = "lo" ] && continue
 
         if [ -d "/sys/class/net/$iface/wireless" ]; then
-            SSID=$(iw dev "$iface" link 2>/dev/null |
-                sed -n 's/^[[:space:]]*SSID: //p')
+            # La interfaz Wi-Fi existe
+            WIFI="󰤮"
 
-            if [ -n "$SSID" ]; then
-                WIFI="$SSID"
-                break
+            if iw dev "$iface" link 2>/dev/null |
+                grep -q "^Connected to"; then
+                WIFI="󰤨"
             fi
+
+            break
         fi
     done
 
 
     # Bluetooth
-    BT="OFF"
+    BT="󰂲"
 
     if bluetoothctl show 2>/dev/null |
         grep -q "Powered: yes"; then
 
-        DEVICE=$(bluetoothctl devices Connected 2>/dev/null |
-            sed 's/^Device [^ ]* //' |
-            head -n1)
+        BT="󰂯"
 
-        if [ -n "$DEVICE" ]; then
-            BT="$DEVICE"
-        else
-            BT="ON"
+        if bluetoothctl devices Connected 2>/dev/null |
+            grep -q "^Device "; then
+            BT="󰂱"
         fi
     fi
 
@@ -77,10 +76,10 @@ while true; do
 
 
     # Fecha y hora
-    DATE=$(date '+%d %b, %Y - %H:%M')
+    DATE=$(date '+%d %b, %H:%M')
 
 
-    echo " $WIFI     $BT     $VOLUME%    ☀ $BRIGHTNESS%    $BAT_ICON $BATTERY%    $DATE"
+    echo "$WIFI  $BT    $VOLUME  $BAT_ICON $BATTERY  $DATE"
 
     sleep 1
 done
