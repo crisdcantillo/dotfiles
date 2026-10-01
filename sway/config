@@ -1,5 +1,6 @@
 exec pipewire
 exec wirepumbler
+exec_always swaybg -i ~/.config/sway/wallpaper.jpg -m fill
 
 set $mod Mod4
 
@@ -31,6 +32,9 @@ bindsym $mod+Return exec $term
 bindsym $mod+Space exec $menu
 bindsym $mod+q kill
 
+# Remove status bar
+default_border pixel 0
+
 bar {
     position top
 
@@ -39,7 +43,9 @@ bar {
     colors {
         statusline #ffffff
         background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        focused_workspace  #d0d0d0 #d0d0d0 #262626
+        active_workspace   #323232 #323232 #ffffff
+        inactive_workspace #323232 #323232 #5c5c5c
     }
 }
 
