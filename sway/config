@@ -1,5 +1,8 @@
+output eDP-1 resolution 1920x1200
+output eDP-1 scale 1.25
+
 exec pipewire
-exec wirepumbler
+exec wireplumber
 exec_always swaybg -i ~/.config/sway/wallpaper.jpg -m fill
 
 set $mod Mod4
@@ -52,4 +55,11 @@ bar {
 input type:keyboard {
     xkb_layout us
     xkb_variant colemak_dh
+}
+
+input type:touchpad {
+    tap enabled
+    tap_button_map lrm
+    natural_scroll enabled
+    scroll_method two_finger
 }

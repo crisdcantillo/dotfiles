@@ -12,6 +12,7 @@ sway
 wofi
 wl-clipboard
 foot
+starship
 htop
 vim
 neovim

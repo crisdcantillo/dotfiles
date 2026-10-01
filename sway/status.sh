@@ -59,20 +59,30 @@ while true; do
 
 
     # Batería
-    BATTERY=$(cat /sys/class/power_supply/BAT0/capacity)
-    BAT_STATUS=$(cat /sys/class/power_supply/BAT0/status)
+    BATTERY="N/A"
+    BAT_STATUS=""
+    BAT_ICON="󰁾"
 
-    case "$BAT_STATUS" in
-        Charging)
-            BAT_ICON="󰂄"
-            ;;
-        Full)
-            BAT_ICON="󰁹"
-            ;;
-        *)
-            BAT_ICON="󰁾"
-            ;;
-    esac
+    for bat in /sys/class/power_supply/BAT*; do
+        if [ -f "$bat/capacity" ]; then
+            BATTERY=$(cat "$bat/capacity")
+            BAT_STATUS=$(cat "$bat/status")
+
+            case "$BAT_STATUS" in
+                Charging)
+                    BAT_ICON="󰂄"
+                    ;;
+                Full)
+                    BAT_ICON="󰁹"
+                    ;;
+                *)
+                    BAT_ICON="󰁾"
+                    ;;
+            esac
+
+            break
+        fi
+    done
 
 
     # Fecha y hora
