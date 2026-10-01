@@ -2,6 +2,7 @@ output eDP-1 resolution 1920x1200
 output eDP-1 scale 1.25
 
 exec pipewire
+exec pipewire-pulse
 exec wireplumber
 exec_always swaybg -i ~/.config/sway/wallpaper.jpg -m fill
 
@@ -10,7 +11,14 @@ set $mod Mod4
 set $term foot
 set $menu wofi --show drun
 
-## WORKSPACES
+# SHORTCUTS
+bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-
+
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+
+# WORKSPACES
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -35,7 +43,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+Space exec $menu
 bindsym $mod+q kill
 
-# Remove status bar
+# Remove default top blue status bar
 default_border pixel 0
 
 bar {
@@ -52,6 +60,7 @@ bar {
     }
 }
 
+# DEVICES
 input type:keyboard {
     xkb_layout us
     xkb_variant colemak_dh

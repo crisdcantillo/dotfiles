@@ -3,6 +3,7 @@ pipewire
 base-devel
 tlp
 bluez
+libspa-bluetooth
 brightnessctl
 dbus
 elogind

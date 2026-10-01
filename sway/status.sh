@@ -89,7 +89,7 @@ while true; do
     DATE=$(date '+%d %b, %H:%M')
 
 
-    echo "$WIFI  $BT    $VOLUME  $BAT_ICON $BATTERY  $DATE"
+    echo "$WIFI  $BT |   $VOLUME | 󰃞 $BRIGHTNESS | $BAT_ICON $BATTERY | $DATE"
 
     sleep 1
 done
