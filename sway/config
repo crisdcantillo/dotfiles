@@ -76,6 +76,12 @@ input type:keyboard {
     xkb_variant colemak_dh
 }
 
+# Ferris Sweep
+# "swaymsg -t get_inputs" to get input id
+input "7504:24926:Sweep_Keyboard" {
+    xkb_layout us
+}
+
 input type:touchpad {
     tap enabled
     tap_button_map lrm
