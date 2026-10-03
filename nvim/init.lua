@@ -2,8 +2,8 @@ require("core.options")
 require("core.keymaps")
 require("core.commands")
 
--- clones lazy repo
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
     local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
     local out = vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
@@ -12,19 +12,12 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     end
 end
 
----@type vim.Option
-local rtp = vim.opt.rtp
-rtp:prepend(lazypath)
+vim.opt.rtp:prepend(lazypath)
 
 -- init plugins
 require("lazy").setup({
-    require("plugins.lsp"), -- modified config from Kickstart
-    require("plugins.blink"), -- modified config from Kickstart
-    require("plugins.treesitter"),
-    require("plugins.telescope"),
-    require("plugins.neotree"),
-    require("plugins.gitsigns"),
-    require("plugins.theme")
+    require("plugins.lsp"),
+    require("plugins.gitsigns")
 })
 
-vim.cmd("colorscheme kanagawa-dragon")
+vim.cmd.colorscheme("lunaperche")

@@ -1,3 +1,12 @@
+vim.opt.path:append("**")
+
+vim.opt.wildignore:append({
+    "*/node_modules/*",
+    "*/.git/*",
+    "*/dist/*",
+    "*/build/*"
+})
+
 vim.wo.number = true
 vim.o.relativenumber = true
 vim.o.clipboard = 'unnamedplus'
