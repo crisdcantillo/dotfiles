@@ -14,9 +14,6 @@ if command -v starship >/dev/null 2>&1; then
     eval "$(starship init bash)"
 fi
 
-[[ -r /usr/share/bash-completion/bash_completion ]] && \
-    . /usr/share/bash-completion/bash_completion
-
 # Connect and disconnect Ferris Sweep
 alias sweep-on='bluetoothctl connect FD:DA:4D:1D:0E:D2'
 alias sweep-off='bluetoothctl disconnect FD:DA:4D:1D:0E:D2'

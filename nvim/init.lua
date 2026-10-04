@@ -17,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 -- init plugins
 require("lazy").setup({
     require("plugins.lsp"),
+    require("plugins.treesitter"),
     require("plugins.gitsigns")
 })
 

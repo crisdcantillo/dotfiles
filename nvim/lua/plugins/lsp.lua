@@ -4,7 +4,7 @@ return {
         config = function()
             vim.lsp.enable({
                 "lua_ls",
-                "ts_ls",
+                "tsc",
                 "cssls",
                 "html",
                 "clangd"

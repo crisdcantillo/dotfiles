@@ -20,7 +20,6 @@ htop
 vim
 neovim
 nodejs
-tree-sitter-cli
 luarocks
 ripgrep
 git
