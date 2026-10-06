@@ -25,6 +25,8 @@ vim.g.netrw_liststyle = 3
 vim.o.winborder = "rounded"
 vim.opt.fixendofline = false
 vim.opt.list = true
+-- Show relative linenumbers in netrw
+vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
 vim.opt.listchars = {
     tab = "→ ",
     trail = "·",
