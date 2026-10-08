@@ -1,4 +1,9 @@
+-- All of these settings are amazing for searching files
 vim.opt.path:append("**")
+vim.opt.wildmenu = true
+vim.opt.wildmode = "longest:full,full"
+vim.opt.wildignorecase = true
+vim.opt.wildoptions = "pum"
 
 vim.opt.wildignore:append({
     "*/node_modules/*",
@@ -7,6 +12,7 @@ vim.opt.wildignore:append({
     "*/build/*"
 })
 
+-- Other settings
 vim.wo.number = true
 vim.o.relativenumber = true
 vim.o.clipboard = 'unnamedplus'
