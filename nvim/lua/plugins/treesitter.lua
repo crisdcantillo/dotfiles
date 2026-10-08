@@ -1,9 +1,10 @@
 local languages = {
+    "c",
     "lua",
     "javascript",
     "typescript",
     "html",
-    "css",
+    "css"
 }
 
 return {

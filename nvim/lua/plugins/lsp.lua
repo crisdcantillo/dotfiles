@@ -7,7 +7,7 @@ return {
                 "tsc",
                 "cssls",
                 "html",
-                "clangd"
+                "clangd",
             })
         end,
     },

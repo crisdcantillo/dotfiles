@@ -18,7 +18,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     require("plugins.lsp"),
     require("plugins.treesitter"),
-    require("plugins.gitsigns")
+    require("plugins.gitsigns"),
+    require("plugins.telescope")
 })
 
 vim.cmd.colorscheme("lunaperche")

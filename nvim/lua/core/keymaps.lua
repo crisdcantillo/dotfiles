@@ -15,7 +15,6 @@ vim.keymap.set('n', '<Tab>', ':bnext <CR>', { desc = 'Next buffer' })
 vim.keymap.set('n', '<S-Tab>', ':bprevious <CR>', { desc = 'Previous buffer' })
 vim.keymap.set('n', '<leader>x', ':bdelete! <CR>', { desc = 'Delete buffer' })
 vim.keymap.set('n', '<leader>w', '<cmd>set wrap! <CR>', { desc = 'Toggle line wrap' })
-vim.keymap.set('n', '<leader>f', ':find ', { desc = 'Toggle line wrap' })
 
 -- Navigate splits
 vim.keymap.set("n", "<C-Left>", "<C-w>h")
@@ -28,6 +27,12 @@ vim.keymap.set("n", "<C-S-Up>", "<cmd>resize +2<CR>")
 vim.keymap.set("n", "<C-S-Down>", "<cmd>resize -2<CR>")
 vim.keymap.set("n", "<C-S-Left>", "<cmd>vertical resize -2<CR>")
 vim.keymap.set("n", "<C-S-Right>", "<cmd>vertical resize +2<CR>")
+
+--- Telescope
+vim.keymap.set('n', '<leader>sf', ':Telescope find_files <CR>', { desc = 'Find files' })
+vim.keymap.set('n', '<leader>sg', ':Telescope live_grep <CR>', { desc = 'Live grep' })
+vim.keymap.set('n', '<leader>sr', ':Telescope resume <CR>', { desc = 'Resume' })
+vim.keymap.set('n', '<leader><leader>', ':Telescope buffers <CR>', { desc = 'Buffers' })
 
 -- LSP
 vim.keymap.set('n', '<leader>n', vim.lsp.buf.rename, { desc = 'Rename' })
