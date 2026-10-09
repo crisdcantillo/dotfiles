@@ -14,6 +14,7 @@ vim.keymap.set('n', '<leader><leader>', ':buffers <CR>', { desc = 'List of buffe
 vim.keymap.set('n', '<Tab>', ':bnext <CR>', { desc = 'Next buffer' })
 vim.keymap.set('n', '<S-Tab>', ':bprevious <CR>', { desc = 'Previous buffer' })
 vim.keymap.set('n', '<leader>x', ':bdelete! <CR>', { desc = 'Delete buffer' })
+vim.keymap.set('n', '<leader>X', ':%bd|e#|bd# <CR>', { desc = 'Delete all buffer but active' })
 vim.keymap.set('n', '<leader>w', '<cmd>set wrap! <CR>', { desc = 'Toggle line wrap' })
 
 -- Navigate splits
@@ -37,8 +38,8 @@ vim.keymap.set('n', '<leader><leader>', ':Telescope buffers <CR>', { desc = 'Buf
 -- LSP
 vim.keymap.set('n', '<leader>n', vim.lsp.buf.rename, { desc = 'Rename' })
 vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, { desc = 'Goto Code Action' })
-vim.keymap.set('n', '<leader>r', vim.lsp.buf.references, { desc = 'Goto References' })
 vim.keymap.set('n', '<leader>d', vim.lsp.buf.definition, { desc = 'Goto Definition' })
+vim.keymap.set('n', '<leader>r', ':Telescope lsp_references <CR>', { desc = 'Goto References' })
 
 -- Git
 vim.keymap.set('n', 'ga', ':term git adog <CR>', { desc = 'Git adog' })
