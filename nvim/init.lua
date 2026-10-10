@@ -20,7 +20,8 @@ require("lazy").setup({
     require("plugins.treesitter"),
     require("plugins.gitsigns"),
     require("plugins.telescope"),
-    require("plugins.blink")
+    require("plugins.blink"),
+    { "rebelot/kanagawa.nvim", priority = 1000, opt = {} }
 })
 
-vim.cmd.colorscheme("lunaperche")
+vim.cmd("colorscheme kanagawa-dragon")
