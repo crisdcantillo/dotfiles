@@ -17,6 +17,7 @@ grim
 slurp
 keyd
 foot
+bash-completion
 starship
 htop
 vim

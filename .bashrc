@@ -3,6 +3,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+if [[ -r /usr/share/bash-completion/bash_completion ]];
+    then source /usr/share/bash-completion/bash_completion
+fi
+
 export EDITOR='nvim'
 export VISUAL='nvim'
 
