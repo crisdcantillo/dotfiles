@@ -37,14 +37,18 @@ vim.keymap.set('n', '<leader><leader>', ':Telescope buffers <CR>', { desc = 'Buf
 
 -- LSP
 vim.keymap.set('n', '<leader>n', vim.lsp.buf.rename, { desc = 'Rename' })
-vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, { desc = 'Goto Code Action' })
 vim.keymap.set('n', '<leader>d', vim.lsp.buf.definition, { desc = 'Goto Definition' })
 vim.keymap.set('n', '<leader>r', ':Telescope lsp_references <CR>', { desc = 'Goto References' })
 
 -- Git
-vim.keymap.set('n', 'ga', ':term git adog <CR>', { desc = 'Git adog' })
+vim.keymap.set('n', 'gl', ':term git adog <CR>', { desc = 'Git log' })
 vim.keymap.set('n', 'gs', ':term git status <CR>', { desc = 'Git status' })
-vim.keymap.set('n', 'gd', ':term git diff <CR>', { desc = 'Git diff' })
+vim.keymap.set('n', 'gaf', ':term git add -- % <CR>', { desc = 'Git add curr file' })
+vim.keymap.set('n', 'ga.', ':term git add --all && git status <CR>', { desc = 'Git add all' })
+vim.keymap.set('n', 'grf', ':term git restore --staged -- % <CR>', { desc = 'Git restore file' })
+vim.keymap.set('n', 'gr.', ':term git restore --staged . && git status <CR>', { desc = 'Git restore all' })
+vim.keymap.set('n', 'gdf', ':term git diff HEAD -- % <CR>', { desc = 'Git diff curr file' })
+vim.keymap.set('n', 'gd.', ':term git diff HEAD <CR>', { desc = 'Git diff all' })
 
 -- Stay in indent mode
 vim.keymap.set('v', '<', '<gv', { desc = 'Indent left' })
