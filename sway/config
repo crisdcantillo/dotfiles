@@ -1,11 +1,6 @@
 output eDP-1 resolution 1920x1200
 output eDP-1 scale 1.25
 
-exec pipewire
-exec pipewire-pulse
-exec wireplumber
-exec_always swaybg -i ~/.config/sway/wallpaper.jpg -m fill
-
 set $mod Mod4
 
 set $term foot
@@ -77,13 +72,6 @@ bar {
 # DEVICES
 input type:keyboard {
     xkb_layout us
-    xkb_variant colemak_dh
-}
-
-# Ferris Sweep
-# "swaymsg -t get_inputs" to get input id
-input "7504:24926:Sweep_Keyboard" {
-    xkb_layout us
 }
 
 input type:touchpad {
@@ -92,3 +80,9 @@ input type:touchpad {
     natural_scroll enabled
     scroll_method two_finger
 }
+
+exec pipewire
+exec pipewire-pulse
+exec wireplumber
+exec kanata --cfg ~/.config/kanata/config.kbd
+exec_always swaybg -i ~/.config/sway/wallpaper.jpg -m fill

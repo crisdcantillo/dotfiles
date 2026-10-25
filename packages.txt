@@ -15,7 +15,7 @@ j4-dmenu-desktop
 wl-clipboard
 grim
 slurp
-keyd
+kanata
 foot
 bash-completion
 starship

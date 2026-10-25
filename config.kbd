@@ -1,0 +1,83 @@
+(defcfg
+  linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
+  process-unmapped-keys yes
+  concurrent-tap-hold yes
+)
+
+;; These are INPUT keycodes, not output characters.
+;; The Sweep must send these same codes from its 34 positions.
+(defsrc
+  q w e r t y u i o p
+  a s d f g h j k l ;
+  z x c v b n m , . /
+  lalt    spc    ralt
+)
+
+(defalias
+  ;; Home-row mods
+  a-mod (tap-hold-press 180 180 a lmet)
+  s-mod (tap-hold-press 180 180 r lalt)
+  d-mod (tap-hold-press 180 180 s lsft)
+  f-mod (tap-hold-press 180 180 t lctl)
+
+  j-mod (tap-hold-press 180 180 n rctl)
+  k-mod (tap-hold-press 180 180 e rsft)
+  l-mod (tap-hold-press 180 180 i ralt)
+  semi-mod (tap-hold-press 180 180 o rmet)
+
+  ;; Thumb keys
+  left-thumb (tap-hold-press 180 180 esc (layer-while-held numbers))
+  space-thumb (tap-hold-press 180 180 spc (layer-while-held symbols))
+  right-thumb (tap-hold-press 180 180 bspc (layer-while-held media))
+
+  ;; Navigation
+  q-nav (tap-hold-press 180 180 q (layer-while-held navigation))
+)
+
+;; Original ZMK combos:
+;; position 12+13 = logical S+T
+;; position 16+17 = logical N+E
+;;
+;; On a standard QWERTY input, these correspond to D+F and J+K.
+(defchordsv2
+  (j k) ret 40 all-released ()
+)
+
+(deflayer base
+  @q-nav w f p b    j l u y '
+  @a-mod @s-mod @d-mod @f-mod g    m @j-mod @k-mod @l-mod @semi-mod
+  x c d v z   k h , . /
+  @left-thumb @space-thumb @right-thumb
+)
+
+;; Layer 1: Symbols
+(deflayer symbols
+  S-1 S-2 S-3 S-4 S-5       S-6 S-7 S-8 Minus S-Equal
+  S-Minus Equal S-[ S-9     [    ] S-0 S-] ; S-;
+  XX XX S-grv grv XX        XX S-bksl bksl XX XX
+  XX XX XX
+)
+
+;; Layer 2: Numbers
+(deflayer numbers
+  XX XX XX XX XX    XX 7 8 9 XX
+  XX XX XX XX XX    XX 4 5 6 XX
+  XX XX XX XX XX    XX 1 2 3 XX
+  XX 0 XX
+)
+
+;; Layer 3: Media and functions (Bluetooth removed)
+(deflayer media
+  XX brdn prtsc brup XX     f13 f7 f8 f9 XX
+  prev vold XX volu next    f11 f4 f5 f6 XX
+  XX XX XX XX XX            f10 f1 f2 f3 XX
+  XX XX XX
+)
+
+;; Layer 4: Navigation (mouse layer removed)
+(deflayer navigation
+  XX XX XX XX XX    XX pgdn pgup XX XX
+  XX XX XX XX XX    left down up right XX
+  XX XX XX XX XX    XX end home XX XX
+  XX XX XX
+)
