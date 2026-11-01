@@ -28,3 +28,6 @@ alias redmi-off='bluetoothctl disconnect 00:BB:43:7A:E5:DE'
 
 # Ubuntu container
 alias ubuntu='distrobox enter ubuntu'
+
+# opencode
+export PATH=/home/crisdcantillo/.opencode/bin:$PATH

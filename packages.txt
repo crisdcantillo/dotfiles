@@ -27,3 +27,4 @@ luarocks
 ripgrep
 git
 firefox
+jq
